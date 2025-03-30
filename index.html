@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talia Niaken Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .active {
+            font-weight: bold;
+
+        .profile-image {
+            max-width: 200px;
+            
+            border-radius: 50%;
+           
+            margin-bottom: 1rem;
+        }
+   
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Talia Niaken</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="content-section">
+        <h2>Home</h2>
+        <img src="20241010_081434.jpg" alt="Talia Niaken" class="profile-image">
+        <p>Dedicated and results-oriented professional with a strong passion for education and community development. Proven ability to manage complex operations, ensuring smooth running and exceeding expectations. Adept at building strong relationships with diverse stakeholders, including children, parents, teachers, and staff. Highly skilled in problem-solving, conflict resolution, and crisis management. Committed to fostering a positive and inclusive learning environment for all. Eager to leverage my skills and experience to contribute to a dynamic and impactful organization.</p>
+    </section>
+
+    <section id="about" class="content-section">
+        <h2>About Me</h2>
+        <p>Dedicated and results-oriented professional with a strong passion for education and community development. Proven ability to manage complex operations, ensuring smooth running and exceeding expectations. Adept at building strong relationships with diverse stakeholders, including children, parents, teachers, and staff. Highly skilled in problem-solving, conflict resolution, and crisis management. Committed to fostering a positive and inclusive learning environment for all. Eager to leverage my skills and experience to contribute to a dynamic and impactful organization.</p>
+    </section>
+
+    <section id="experience" class="content-section">
+        <h2>Experience</h2>
+        <div class="experience-item">
+            <h3>Manager, Brilliant Minds Non-Profit Organization, Johannesburg</h3>
+            <p class="job-duration">OCT 2024 - NOV 2024</p>
+            <p>Oversee daily operations to ensure the safety, well-being, and academic progress of underprivileged children. • Manage logistics, including transportation and meal provision, to facilitate smooth program delivery. Recruit, train, and supervise tutors and fitness professionals to maintain high-quality instruction and support. • Monitor children's activities to prevent injuries and maintain a safe and positive learning environment. Procure and manage necessary learning materials, such as math equipment, to support educational programs.</p>
+        </div>
+        <div class="experience-item">
+            <h3>Sales Consultant, Truworths Johannesburg, South Africa</h3>
+            <p class="job-duration">MAY 2024 - JUL 2024</p>
+            <p>Advised clients on appropriate product selections based on their unique needs, ensuring optimal satisfaction levels upon purchase. Used consultative sales techniques to understand customer needs and recommend relevant products and services. Responded to telephone and in-person requests for information. Provided sales and customer service assistance to walk-in traffic. Developed long-lasting client relationships by consistently exceeding expectations with exceptional service. Maximized customer retention by resolving issues quickly. Managed damages on clothing items. Documented and processed weekly sales receipts.</p>
+        </div>
+        <div class="experience-item">
+            <h3>Math Tutor, Self-Employed Johannesburg, South Africa</h3>
+            <p class="job-duration">JAN 2022 - PRESENT</p>
+            <p>Tutored nine students per week in private sessions using detailed lesson plans. Encouraged students to explore new study and calculation methods to promote accountability and accommodation of individual needs. • Developed and implemented individualized lesson plans for each student, tailored to their individual needs. Supported students with helpful study habits and exam strategies. Used positive reinforcement, repetition, and review to help students master challenging material. Explained math concepts in a caring and encouraging environment to help kids thrive and learn.</p>
+        </div>
+    </section>
+
+    <section id="education" class="content-section">
+        <h2>Education</h2>
+        <div class="education-item">
+            <h3>Florida Park High School, South Africa</h3>
+            <p class="education-duration">2023</p>
+            <p>High School</p>
+            <h3>The University of South Africa, South Africa</h3>
+            <p class="education-duration">In progress</p>
+            <p>University</p>
+        </div>
+    </section>
+
+    <section id="skills" class="content-section">
+        <h2>Skills</h2>
+        <ul>
+            <li>Customer Service</li>
+            <li>Problem Solving</li>
+            <li>Critical Thinking</li>
+            <li>Communication</li>
+            <li>Teamwork</li>
+            <li>Leadership</li>
+            <li>Organization</li>
+            <li>Time management</li>
+            <li>Conflict resolution</li>
+            <li>Attention to detail</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Talia Niaken</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Highlight active section
+        const navLinks = document.querySelectorAll('nav a');
+        const sections = document.querySelectorAll('section');
+
+        function highlightActiveSection() {
+            let scrollY = window.pageYOffset;
+
+            sections.forEach(section => {
+                const sectionId = section.getAttribute('id');
+                const sectionTop = section.offsetTop - 50; // Offset to trigger a bit before the top
+                const sectionBottom = sectionTop + section.offsetHeight;
+
+                if (scrollY >= sectionTop && scrollY < sectionBottom) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    document.querySelector(`nav a[href="#${sectionId}"]`).classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', highlightActiveSection);
+        window.addEventListener('load', highlightActiveSection); // Also check on page load
+    </script>
+
+</body>
+
+</html>
